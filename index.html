@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- QR Code generator -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <!-- QR Code scanner -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <!-- Add html2canvas CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <h1>QR Code Smart Attendance System</h1>
+    <div class="container">
+        <div class="section">
+            <h2>Add Student & Generate QR Code</h2>
+            <input type="text" id="name" placeholder="Enter Name" required>
+            <input type="text" id="roll" placeholder="Enter Roll Number" required>
+            <button id="generateBtn">Generate QR Code</button>
+        </div>
+
+        <div class="section" id="qrDisplayContainer" style="display: none; text-align: center; min-width: 220px;">
+            <h2>Generated QR Code</h2>
+            <div id="userInfo" style="margin-bottom: 10px;"></div>
+            <div id="qrcode"></div>
+            <button id="downloadQrBtn" style="margin-top: 10px;">Download QR</button>
+        </div>
+
+        <div class="section">
+            <h2>Smart Attendance (Scan QR)</h2>
+            <div id="reader"></div>
+        </div>
+    </div>
+
+    <div class="attendance-section">
+        <h2>Attendance Table</h2>
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <td>Roll Number</td>
+                    <td>Name</td>
+                    <td>Status</td>
+                    <td>Attendance Count</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
